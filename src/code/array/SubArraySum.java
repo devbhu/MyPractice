@@ -3,12 +3,12 @@ package code.array;
 import java.util.Scanner;
 
 public class SubArraySum {
-    private static int sumOfSubArray(int arr[]){
+    private static int sumOfSubArrays(int arr[]){
         int len=arr.length;
-        int sum=Integer.MIN_VALUE;
-        for(int i=0;i<len;len++){
+        int sum=0;
+        for(int i=0;i<len;i++){
             for(int j=i;j<len;j++){
-                for(int k=i;k<j;k++){
+                for(int k=i;k<=j;k++){
                     sum+=arr[k];
                 }
             }
@@ -25,6 +25,6 @@ public class SubArraySum {
         for(int i=0;i<size;i++){
             arr[i]=scanner.nextInt();
         }
-        System.out.println("sum of all sub arrays is : "+sumOfSubArray(arr));
+        System.out.println("sum of all sub arrays is : "+ sumOfSubArrays(arr));
     }
 }
